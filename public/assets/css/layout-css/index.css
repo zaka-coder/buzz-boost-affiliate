@@ -1,0 +1,1227 @@
+/* Installing Fonts */
+@font-face {
+    font-family: lato;
+    src: url('../../fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: nunito;
+    font-weight: bold;
+    src: url('../../fonts/Nunito/static/Nunito-Bold.ttf');
+}
+
+@font-face {
+    font-family: nunito-regular;
+    font-weight: bold;
+    src: url('../../fonts/Nunito/static/Nunito-Regular.ttf');
+}
+
+@font-face {
+    font-family: segoe;
+    src: url('../../fonts/Segoe-UI-Font/SEGOEUI.TTF');
+}
+
+@font-face {
+    font-family: handwritten;
+    src: url('../../fonts/Just\ Breathe.ttf');
+}
+
+/* Globally Applied CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #F8F7FA;
+}
+
+:root {
+    --button-border-radius: 4px;
+    --button-padding: 8px 28px;
+    --button-color: #105082;
+    --scheme-color: #EA008B;
+    --font-family: 'lato', sans-serif;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.row {
+    --bs-gutter-x: 0 !important;
+}
+
+.all-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input Styles */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+    outline: none;
+    box-shadow: none;
+}
+
+input[type="search"] {
+    outline: none;
+}
+
+/* Scrollbar Styles */
+.hero-div .hero-div-second-part::-webkit-scrollbar,
+.offcanvas-body::-webkit-scrollbar,
+.dynamic-part::-webkit-scrollbar,
+.categories-list::-webkit-scrollbar,
+.modal-body::-webkit-scrollbar {
+    width: 2px;
+}
+
+.hero-div .hero-div-second-part::-webkit-scrollbar-thumb,
+.offcanvas-body::-webkit-scrollbar-thumb,
+.dynamic-part::-webkit-scrollbar-thumb,
+.categories-list::-webkit-scrollbar-thumb,
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #3498db4f;
+}
+
+.hero-div .hero-div-second-part::-webkit-scrollbar-track,
+.offcanvas-body::-webkit-scrollbar-track,
+.dynamic-part::-webkit-scrollbar-track,
+.categories-list::-webkit-scrollbar-track,
+.modal-body::-webkit-scrollbar-track {
+    background-color: #ecf0f1;
+}
+
+/* Container Fluid Styles */
+.container-fluid {
+    padding: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Hero Image Styles */
+.container-fluid .hero-img {
+    width: 30vw;
+    height: 40vh;
+    position: absolute;
+    left: -4%;
+    top: -5%;
+    z-index: 99;
+    /* background-color: red; */
+}
+
+.container-fluid .hero-img img {
+    width: 80%;
+    max-width: 80%;
+    height: 100%;
+}
+
+/* Responsive Styling for Hero Image */
+@media (max-width:600px) {
+    .container-fluid .hero-img {
+        width: 100vw;
+        height: auto;
+        z-index: -9;
+    }
+}
+
+/* Header Styles */
+.header {
+    height: 10vh;
+    border-bottom: 1px solid rgb(208, 207, 207);
+}
+
+/* Responsive Header Styling for Medium Screens */
+@media (max-width:768px) {
+    .header {
+        height: auto;
+    }
+
+    .login-register ul {
+        justify-content: center;
+    }
+}
+
+/* Logo Styles */
+.logo {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+.logo img {
+    width: 250px;
+    max-width: 250px;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Login-Register Styles */
+.login-register ul {
+    height: 100%;
+    gap: 15px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* Responsive Login-Register Styling for Medium Screens */
+@media (max-width: 768px) {
+    .login-register ul {
+        justify-content: center;
+    }
+}
+
+/* Responsive Styling for Small Screens */
+@media (max-width: 640px) {
+    .header {
+        width: 100vw;
+        height: auto;
+    }
+
+    .header .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header .logo img {
+        width: 50%;
+        max-width: 50%;
+    }
+
+    .login-register ul {
+        width: 100%;
+        padding: 10px 0px;
+    }
+}
+
+/* Register Button Styles */
+.header ul li .register {
+    padding: var(--button-padding);
+    background-color: var(--button-color);
+    border-radius: var(--button-border-radius);
+    color: white;
+    font-family: var(--font-family);
+}
+
+/* Login Button Styles */
+.header ul li .login {
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    border: 1px solid var(--button-color);
+    color: #105082;
+    font-family: var(--font-family);
+    transition: all ease 0.5s;
+}
+
+/* Login Button Hover Styles */
+.header ul li .login:hover {
+    background-color: var(--button-color);
+    color: white;
+}
+
+/* Navigation Styles */
+.navigation {
+    width: 70vw;
+    height: 10vh;
+}
+
+.navigation-links {
+    gap: 20px;
+    height: 100%;
+    margin: 0;
+}
+
+/* Navigation Link Styles */
+.navigation-links li a {
+    font-family: nunito;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Home Link Styles */
+.navigation-links li .home {
+    border-bottom: 3px solid var(--scheme-color);
+    color: var(--button-color);
+}
+
+/* Browse Link Styles */
+.navigation-links li .browse {
+    position: relative;
+    color: black;
+}
+
+.navigation-links li .browse::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    height: 3px;
+    width: 0;
+    background: var(--scheme-color);
+    transition: width 0.3s ease;
+}
+
+.navigation-links li .browse:hover::before {
+    width: 100%;
+}
+
+/* User-Related Styles */
+.user-related {
+    height: 100%;
+    gap: 15px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 50px;
+}
+
+/* Icon Styles for User-Related Links */
+.user-related li i,
+.collapse ul li i {
+    color: var(--scheme-color);
+    font-size: 20px !important;
+}
+
+/* Button Styles for User-Related Links */
+.user-related li button,
+.collapse ul li button,
+.small-navbar li button {
+    border: none;
+    background-color: transparent;
+}
+
+/* Text Styles for User-Related Links */
+.user-related li span,
+.collapse ul li span {
+    font-size: 14px;
+    font-family: nunito;
+}
+
+/* Dropdown Item Styles for User-Related Links */
+.user-option-item {
+    padding: 5px 10px;
+    color: black;
+    font-size: 14px;
+    font-family: nunito;
+}
+
+/* Dropdown Item Hover Styles */
+.user-option-item:hover {
+    background-color: var(--scheme-color);
+    color: white;
+}
+
+/* Dropdown Item Focus Styles */
+.user-option-item:focus {
+    background-color: var(--scheme-color);
+    color: white;
+    outline: none;
+}
+
+/* collapse navbar styles */
+.collapsedNavbar {
+    cursor: pointer;
+}
+
+.navbarList {
+    top: 100%;
+    right: 25px !important;
+    box-shadow: 2px 5px 15px rgb(208, 207, 207) !important;
+    display: none;
+    width: 250px;
+    z-index: 9
+}
+
+/* icons styles */
+.circular-number {
+    position: absolute;
+    top: -2px;
+    right: -9px;
+    background-color: #105082;
+    color: white;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding-top: 1px
+}
+
+.special-icon {
+    font-size: 20px;
+    color: black;
+}
+
+/* Search Input Styles */
+.search-icon {
+    cursor: pointer;
+}
+
+.search {
+    padding: 3px 7px;
+    font-family: nunito;
+    font-size: 13px;
+    color: black;
+    border-radius: 7px;
+    border: 1px solid gray;
+}
+
+/* Search Input Placeholder Styles */
+.search::placeholder,
+.search::placeholder {
+    font-size: 13px;
+    color: black;
+    font-family: nunito;
+}
+
+.search:active,
+.search:focus {
+    border: 1px solid black;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Larger Screens (Min Width: 768px) */
+@media (min-width:768px) {
+    .user-related {
+        display: block;
+    }
+
+    .navbar-toggler {
+        display: none !important;
+    }
+}
+
+/* Smaller Screens (Max Width: 768px) */
+@media (max-width:768px) {
+    .user-related {
+        display: none !important;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler i {
+        font-size: 24px !important;
+    }
+
+    .navigation-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        height: 100%;
+    }
+}
+
+/* Extra Small Screens (Max Width: 640px) */
+@media (max-width:640px) {
+    .navigation {
+        width: 100vw;
+        height: auto;
+    }
+
+    .navigation-links {
+        height: 100%;
+    }
+}
+
+/* Hero Div Styles */
+.hero-div {
+    width: 100vw;
+    height: calc(100vh - 10vh);
+    margin: auto;
+    background: #F8F7FA 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+/* Hero Div First Part Styles */
+.hero-div .hero-div-partition {
+    height: 100%;
+    overflow: auto;
+}
+
+/* Hero Div Second Part Styles */
+.hero-div .hero-div-second-part {
+    height: calc(100vh - 20vh);
+    overflow: auto;
+}
+
+
+.hero-div .hero-div-partition .row .fill {
+    height: 100%;
+}
+
+/* Hero Div Second Part Styles */
+.hero-div .hero-div-second-part .catergory-button {
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-color);
+    color: white;
+    width: 129px;
+    height: 38px;
+}
+
+/* Responsive Styles for Smaller Screens (Max Width: 768px) */
+@media (max-width:768px) {
+    .hero-div .hero-div-second-part .catergory-button {
+        display: block;
+    }
+
+    .hero-div .hero-div-partition .row .fill {
+        display: none;
+    }
+}
+
+/* Responsive Styles for Larger Screens (Min Width: 768px) */
+@media (min-width:768px) {
+    .hero-div .hero-div-second-part .catergory-button {
+        display: none;
+    }
+}
+
+/* Styles for Categories List in Fill Section */
+.hero-div .hero-div-partition .row .fill .categories-list {
+    width: 100%;
+    height: 100%;
+    /* margin: auto; */
+    overflow: auto;
+}
+
+/* Styles for Categories List Items */
+.hero-div .hero-div-partition .row .fill .categories-list li,
+.offcanvas-body .categories-list li {
+    margin-bottom: 1px;
+    margin-right: 5px;
+}
+
+/* Styles for Categories and Offcanvas Title */
+.hero-div .categories,
+.offcanvas-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: nunito;
+    letter-spacing: 0px;
+    color: var(--button-color);
+    opacity: 1;
+    text-transform: uppercase;
+}
+
+/* Styles for Main Items in Hero Div */
+.hero-div .main-item {
+    font-size: 16px;
+    font-family: nunito;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: black;
+    opacity: 1;
+    background: transparent;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.hero-div .main-item:hover {
+    background-color: #F2F2F2;
+}
+
+/* Styles for Active Main Items in Hero Div */
+.hero-div .main-item.active {
+    font-size: 16px;
+    font-family: nunito;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: var(--scheme-color);
+    opacity: 1;
+    background: #DAE1EB 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+/* Dynamic Part Styles */
+.dynamic-part {
+    width: calc(100% - 60px);
+    height: 100%;
+    margin: 0px 30px;
+    /* overflow: auto; */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+/* Responsive Styles for Smaller Screens (Max Width: 768px) */
+@media (max-width: 768px) {
+    .dynamic-part {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        padding: 0;
+    }
+}
+
+/* the breakpoints styles */
+.h-0 {
+    height: 0%;
+}
+
+.h-5 {
+    height: 5%;
+}
+
+.h-10 {
+    height: 10%;
+}
+
+.h-15 {
+    height: 15%;
+}
+
+.h-20 {
+    height: 20%;
+}
+
+.h-25 {
+    height: 25%;
+}
+
+.h-30 {
+    height: 30%;
+}
+
+.h-35 {
+    height: 35%;
+}
+
+.h-40 {
+    height: 40%;
+}
+
+.h-45 {
+    height: 45%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-55 {
+    height: 55%;
+}
+
+.h-60 {
+    height: 60%;
+}
+
+.h-65 {
+    height: 65%;
+}
+
+.h-70 {
+    height: 70%;
+}
+
+.h-75 {
+    height: 75%;
+}
+
+.h-80 {
+    height: 80%;
+}
+
+.h-85 {
+    height: 85%;
+}
+
+.h-90 {
+    height: 90%;
+}
+
+.h-95 {
+    height: 95%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+/* Width Classes: */
+.w-0 {
+    width: 0%;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-35 {
+    width: 35%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-45 {
+    width: 45%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-55 {
+    width: 55%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-65 {
+    width: 65%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-80 {
+    width: 80%;
+}
+
+.w-85 {
+    width: 85%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-95 {
+    width: 95%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* and now media queries for different devices */
+@media (min-width: 768px) {
+    .h-md-0 {
+        height: 0% !important;
+    }
+
+    .h-md-5 {
+        height: 5% !important;
+    }
+
+    .h-md-10 {
+        height: 10% !important;
+    }
+
+    .h-md-15 {
+        height: 15% !important;
+    }
+
+    .h-md-20 {
+        height: 20% !important;
+    }
+
+    .h-md-25 {
+        height: 25% !important;
+    }
+
+    .h-md-30 {
+        height: 30% !important;
+    }
+
+    .h-md-35 {
+        height: 35% !important;
+    }
+
+    .h-md-40 {
+        height: 40% !important;
+    }
+
+    .h-md-45 {
+        height: 45% !important;
+    }
+
+    .h-md-50 {
+        height: 50% !important;
+    }
+
+    .h-md-55 {
+        height: 55% !important;
+    }
+
+    .h-md-60 {
+        height: 60% !important;
+    }
+
+    .h-md-65 {
+        height: 65% !important;
+    }
+
+    .h-md-70 {
+        height: 70% !important;
+    }
+
+    .h-md-75 {
+        height: 75% !important;
+    }
+
+    .h-md-80 {
+        height: 80% !important;
+    }
+
+    .h-md-85 {
+        height: 85% !important;
+    }
+
+    .h-md-90 {
+        height: 90% !important;
+    }
+
+    .h-md-95 {
+        height: 95% !important;
+    }
+
+    .h-md-100 {
+        height: 100% !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .w-md-0 {
+        width: 0% !important;
+    }
+
+    .w-md-5 {
+        width: 5% !important;
+    }
+
+    .w-md-10 {
+        width: 10% !important;
+    }
+
+    .w-md-15 {
+        width: 15% !important;
+    }
+
+    .w-md-20 {
+        width: 20% !important;
+    }
+
+    .w-md-25 {
+        width: 25% !important;
+    }
+
+    .w-md-30 {
+        width: 30% !important;
+    }
+
+    .w-md-35 {
+        width: 35% !important;
+    }
+
+    .w-md-40 {
+        width: 40% !important;
+    }
+
+    .w-md-45 {
+        width: 45% !important;
+    }
+
+    .w-md-50 {
+        width: 50% !important;
+    }
+
+    .w-md-55 {
+        width: 55% !important;
+    }
+
+    .w-md-60 {
+        width: 60% !important;
+    }
+
+    .w-md-65 {
+        width: 65% !important;
+    }
+
+    .w-md-70 {
+        width: 70% !important;
+    }
+
+    .w-md-75 {
+        width: 75% !important;
+    }
+
+    .w-md-80 {
+        width: 80% !important;
+    }
+
+    .w-md-85 {
+        width: 85% !important;
+    }
+
+    .w-md-90 {
+        width: 90% !important;
+    }
+
+    .w-md-95 {
+        width: 95% !important;
+    }
+
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+
+/*
+  Global CSS for all modal elements
+*/
+
+/* Styling for text in the modal */
+.modal-text {
+    font: normal normal normal 15px/21px segoe;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+/* Styling for images in the left side of the modal body */
+/* .modal-body-left img {
+    width: 30%;
+    max-width: 30%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 9px;
+} */
+
+/* Responsive styling for images in the left side of the modal body on small screens */
+/* @media(max-width:768px) {
+    .modal-body-left img {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 7px;
+    }
+} */
+
+/* Styling for heading 2 in the left side of the modal body */
+.modal-body-left h2 {
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+/* Styling for input fields in the modal body */
+.modal-body input {
+    border: none !important;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132) !important;
+}
+
+/* Styling for input fields when focused in the modal body */
+.modal-body input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none;
+}
+
+/* Styling for select dropdowns in the modal body */
+.modal-body select {
+    border: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132) !important;
+}
+
+/* Styling for select dropdowns when focused in the modal body */
+.modal-body select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Styling for buttons in the modal body and footer */
+.modal-body button,
+.modal-footer button {
+    color: white;
+    width: 140px;
+    height: 38px;
+    background-color: #105082;
+    border: 0;
+    border-radius: 3px;
+}
+
+/* Styling for heading 1 in the right side of the modal body */
+.modal-body-right h1 {
+    font: normal normal 600 22px/30px segoe;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+/* styling for the rough brushed background-image for user name */
+.user__name {
+    background-image: url('../../buyer-assets/deco-brush.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.single_store_name:hover {
+    background-color: #f5f3f8;
+}
+
+.anchor-button {
+    /* Common styles for both anchor and button */
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #105082;
+    font-family: nunito;
+    background-color: transparent;
+}
+
+.category-name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #105082;
+    opacity: 1;
+    margin-bottom: 10px;
+    width: fit-content;
+    position: relative;
+}
+
+.category-name::after {
+    content: "";
+    height: 5px;
+    width: 100%;
+    background-color: #EA008B;
+    position: absolute;
+    bottom: -9%;
+    right: 0%;
+}
+
+button.splide__pagination__page {
+    height: 5px !important;
+    width: 5px !important;
+}
+
+.splide__pagination__page.is-active {
+    background-color: #EA008B !important;
+}
+
+.splide__pagination {
+    bottom: -12px !important;
+}
+
+.splide__arrow {
+    width: 20px !important;
+    height: 20px !important;
+    position: relative;
+}
+
+/* .splide__arrow::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: run 2s infinite;
+    border-radius: 50%;
+    z-index: 3 !important;
+}
+
+.splide__arrow--hidden::before {
+    display: none;
+} */
+
+.splide__arrow--next {
+    margin-right: -10px !important;
+    z-index: 1 !important;
+}
+
+.splide__arrow--prev {
+    margin-left: -10px !important;
+}
+
+.splide__arrow svg {
+    fill: #000 !important;
+    height: 12px !important;
+    width: 12px !important;
+}
+
+/* preloader styles */
+/* .skeleton {
+    position: relative;
+}
+
+.skeleton::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2 !important;
+    background: linear-gradient(120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: run 2s infinite;
+}
+
+.skeleton-text {
+    position: relative;
+}
+
+.skeleton-text::before {
+    content: "";
+    width: 90%;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background: linear-gradient(120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: run 2s infinite;
+}
+
+.skeleton-icon {
+    position: relative;
+}
+
+.skeleton-icon::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(120deg,
+            #e5e5e5 30%,
+            #f0f0f0 38%,
+            #f0f0f0 40%,
+            #e5e5e5 48%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    border-radius: 100%;
+    animation: run 2s infinite;
+}
+
+@keyframes run {
+    100% {
+        background-position: -100% 0;
+    }
+} */
+
+/* notification styles */
+.notification-text {
+    font-size: 14px;
+    font-family: nunito;
+    font-weight: normal;
+    letter-spacing: 0px;
+    opacity: 1;
+    position: relative;
+    padding-left: 15px
+}
+
+.notification-text::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #0000008e;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.notification-time {
+    font-size: 12px;
+    font-family: nunito-regular;
+    font-weight: normal;
+    letter-spacing: 0px;
+    opacity: 1;
+    padding-left: 15px;
+}

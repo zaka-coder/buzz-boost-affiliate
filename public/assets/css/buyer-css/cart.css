@@ -1,0 +1,260 @@
+.dynamic-part {
+    background-color: transparent !important;
+    /* overflow: hidden !important; */
+}
+
+h2 {
+    font: normal normal bold 20px/27px nunito;
+    letter-spacing: 0px;
+    color: #105082;
+    opacity: 1;
+}
+
+.store-name {
+    font: normal normal 600 14px/15px nunito;
+    letter-spacing: 0px;
+    color: #105082;
+    opacity: 1;
+}
+
+.item-detail-card img {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px
+}
+
+.item-name {
+    font: normal normal bold 16px/12px nunito !important;
+    letter-spacing: 0px;
+    color: #EA008B;
+    opacity: 1;
+}
+
+.auction-id {
+    font: normal normal normal 11px/15px segoe;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.auction-price {
+    font: normal normal bold 16px/18px nunito;
+    letter-spacing: 0px;
+    color: #105082;
+    opacity: 1;
+}
+
+select,
+.form-control {
+    border: none !important;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132) !important;
+}
+
+.form-control:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+label {
+    font: normal normal 600 15px/20px segoe;
+    letter-spacing: 0px;
+    color: #105082;
+    opacity: 1;
+}
+
+input[type='checkbox']:checked,
+input[type='checkbox']:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.payments {
+    background: #FBFBFB 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.payments p {
+    font: normal normal normal 15px/19px segoe;
+    letter-spacing: 0px;
+    color: #000000DB;
+    opacity: 1;
+}
+
+.value {
+    letter-spacing: 0px;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: segoe;
+    color: #000000DB;
+    opacity: 1;
+    background-color: transparent !important;
+}
+
+.payment-method-image img {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.key {
+    font-size: 15px;
+    font-weight: normal;
+    font-family: segoe;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    background-color: transparent !important;
+}
+
+td button,
+.contact-info button {
+    height: 35px;
+    color: white;
+    background: #105082 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 3px #00000029;
+    border: 1px solid #105082;
+    border-radius: 4px;
+    opacity: 1;
+}
+
+h3 {
+    font-size: 17px;
+    font-family: segoe;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+.contact-input-label {
+    color: black !important;
+    font-weight: 400 !important;
+}
+
+.shipping-info-header,
+.debit {
+    font-size: 16px;
+    font-family: nunito;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.shipping-info {
+    font-size: 16px;
+    font-family: nunito-regular;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.standard-shipping {
+    border: 2px solid #105082;
+}
+
+.order-summary {
+    background: #E8F2F2 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.nunito {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: nunito;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.nunito-regular {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: nunito-regular;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.thanks-icon {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+}
+
+@media(max-width:1300px) {
+    .thanks-icon {
+        height: auto;
+        padding-bottom: 10px;
+    }
+}
+
+.thanks-icon img {
+    width: 20%;
+    /* height: 100%; */
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.thanks-buyer {
+    width: 100%;
+    height: 40%;
+}
+
+@media(max-width:1300px) {
+    .thanks-buyer {
+        height: auto;
+        padding-bottom: 10px;
+    }
+}
+
+.thanks-buyer h1 {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+.thanks-buyer p {
+    font-weight: normal;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    width: 90%;
+    margin: auto;
+}
+
+.thanks-footer {
+    width: 100%;
+    height: 20%;
+}
+
+@media(max-width:1300px) {
+    .thanks-footer {
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.thanks-footer .started {
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-color);
+    color: white;
+    width: 129px;
+    height: 38px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 7px;
+}

@@ -1,0 +1,247 @@
+.card {
+    width: 200px;
+    height: 230px !important;
+    margin: auto;
+    margin: 5px auto;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 2px 5px 15px rgb(208, 207, 207);
+    border-radius: 9px;
+    overflow: hidden;
+    opacity: 1;
+    border: none;
+    position: relative;
+}
+
+.card .featured-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #105082;
+    color: white;
+    padding: 4px 15px;
+    font-size: 13px;
+    font-family: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    opacity: 1;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+.card .discount-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #EA008B;
+    color: white;
+    padding: 4px 15px;
+    font-size: 13px;
+    font-family: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    opacity: 1;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+.card img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.card .products-card-link {
+    width: 100%;
+    height: 35%;
+}
+
+.card .card-body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.card .card-footer {
+    width: 100%;
+    height: 15%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-icons-part {
+    height: 100%;
+    width: 50%;
+}
+
+.footer-icons-part i {
+    font-size: 12px;
+    background-color: #105082;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 50%;
+}
+
+.footer-price-part {
+    height: 100%;
+    width: 20%;
+}
+
+.footer-price-part p {
+    font-size: 9px;
+    font-weight: 700;
+    margin: 10px 3px;
+}
+
+.footer-time-part {
+    height: 100%;
+    width: 30%;
+}
+
+.footer-time-part p {
+    font-size: 10px;
+    font-weight: 700;
+    margin: 9px 2px;
+}
+
+.card-body-first {
+    width: 100%;
+    height: 35%;
+}
+
+.card-body-first h5 {
+    color: #EA008B;
+    font-size: 13px;
+    font-weight: medium;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+.card-body-second {
+    width: 100%;
+    height: 65%;
+}
+
+.card-body-second p,
+.sort {
+    font-size: 9px;
+    font-family: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    line-height: 1;
+    color: #000000;
+    opacity: 1;
+    height: 7%;
+}
+
+.anchor-button {
+    /* Common styles for both anchor and button */
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #105082;
+    font-family: nunito;
+    background-color: transparent;
+}
+
+.anchor-button.active {
+    background-color: #105082;
+    color: white;
+}
+
+select {
+    border: none;
+    border-radius: 8px;
+    padding: 5px 15px;
+    background-color: rgba(34, 34, 34, 0.132);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bids-card {
+    height: 120px;
+    box-shadow: 2px 5px 15px rgb(208, 207, 207);
+    border-radius: 5px;
+}
+
+@media(max-width:992px) {
+    .bids-card {
+        height: auto;
+    }
+}
+
+h3 {
+    font: normal normal 600 14px/19px segoe;
+    letter-spacing: 0px;
+    color: #EA008B;
+    opacity: 1;
+}
+
+.nunito {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: nunito;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.nunito-regular {
+    font-weight: 600;
+    font-size: 15px;
+    font-family: nunito-regular;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.head-before {
+    position: relative;
+}
+
+.head-before:not(:first-child)::before {
+    content: "";
+    width: 2px;
+    height: 20px;
+    background-color: rgba(128, 128, 128, 0.623);
+    position: absolute;
+    left: -7px;
+    top: 7px;
+}
+
+h2 {
+    font: normal normal 800 22px segoe;
+    letter-spacing: 0px;
+    color: #FFF;
+    opacity: 1;
+}
+
+h1 {
+    font: normal normal 800 24px segoe;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}

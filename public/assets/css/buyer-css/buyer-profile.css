@@ -1,0 +1,684 @@
+/* welcome part styles */
+form {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width:1300px) {
+    .carousel-item {
+        height: auto;
+    }
+}
+
+.welcome-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.rock-center {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+}
+
+@media(max-width:1300px) {
+    .rock-center {
+        height: auto;
+        padding-bottom: 10px;
+    }
+}
+
+.rock-center img {
+    width: 20%;
+    /* height: 100%; */
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.welcome-user {
+    width: 100%;
+    height: 40%;
+}
+
+@media(max-width:1300px) {
+    .welcome-user {
+        height: auto;
+        padding-bottom: 10px;
+    }
+}
+
+.welcome-user h1 {
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+.welcome-user p {
+    font-weight: normal;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    width: 90%;
+    margin: auto;
+}
+
+.welcome-footer {
+    width: 100%;
+    height: 20%;
+}
+
+@media(max-width:1300px) {
+    .welcome-footer {
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+.welcome-footer .started {
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-color);
+    color: white;
+    width: 129px;
+    height: 38px;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 7px;
+}
+
+.welcome-footer .next {
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-color);
+    color: white;
+    width: 90px;
+    height: 30px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: 15px;
+}
+
+/* email verification styles */
+.email-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.email-main {
+    height: 100%;
+    width: 100%;
+}
+
+.email-header-part {
+    height: 60%;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+@media(max-width:1300px) {
+    .email-header-part {
+        height: auto;
+    }
+}
+
+.email-header-part img {
+    width: 40%;
+    max-width: 40%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.email-body-part {
+    width: 100%;
+    height: 30%;
+    padding-top: 20px;
+}
+
+@media(max-width:1300px) {
+    .email-body-part {
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+.email-body-part p {
+    font-weight: normal;
+    font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    text-align: center;
+}
+
+.email-footer-part {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.email-footer-part .previous,
+.email-footer-part .next {
+    background-color: #105082;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 30px 15px;
+}
+
+@media(max-width:1300px) {
+    .email-footer-part {
+        height: auto;
+
+    }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    position: static;
+    opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+    transition: opacity 0s 1ms;
+}
+
+/* profile slide styles */
+.profile-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-main {
+    height: 100%;
+    width: 100%;
+}
+
+.profile-header-part {
+    height: 50%;
+    width: 100%;
+}
+
+@media(max-width:1300px) {
+    .profile-header-part {
+        height: auto;
+    }
+}
+
+.profile-header-two-part {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}
+
+.profile-header-two-part img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+    object-fit: contain;
+}
+
+.profile-body-part {
+    width: 100%;
+    height: 35%;
+    padding-top: 20px;
+}
+
+@media(max-width:1300px) {
+    .profile-body-part {
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+.profile-body-part p {
+    font-weight: normal;
+    font-size: 17px;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    line-height: 0.3;
+    text-align: center;
+}
+
+.profile-body-part .profile-picture {
+    display: block;
+    width: 50%;
+    height: 34px;
+    margin: auto;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(34, 34, 34, 0.132);
+}
+
+@media(max-width:668px) {
+    .profile-body-part .profile-picture {
+        width: 80%;
+    }
+}
+
+.profile-body-part .contact input {
+    height: 34px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132);
+}
+
+.contact {
+    width: 50%;
+    margin: auto;
+}
+
+@media(max-width:668px) {
+    .contact {
+        width: 80%;
+    }
+}
+
+.profile-body-part legend {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 0.2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.profile-body-part input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.profile-footer-part {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.profile-footer-part .previous,
+.profile-footer-part .next {
+    background-color: #105082;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 20px 15px;
+}
+
+@media(max-width:1300px) {
+    .profile-footer-part {
+        height: auto;
+
+    }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    display: none;
+}
+
+/* shipping slides styles */
+.shipping-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.shipping-main {
+    width: 100%;
+    height: 100%;
+}
+
+.shipping-header-part {
+    width: 100%;
+    height: 10%;
+}
+
+@media(max-width:1300px) {
+    .shipping-header-part {
+        height: auto;
+
+    }
+}
+
+.shipping-header-part h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #000000;
+    opacity: 1;
+    padding-top: 7px;
+}
+
+.shipping-body-part {
+    width: 100%;
+    height: 80%;
+    /* padding-top: 10px; */
+}
+
+@media(max-width:1300px) {
+    .shipping-body-part {
+        height: auto;
+
+    }
+}
+
+.contact,
+.country,
+.city,
+.state,
+.zipcode,
+.address {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    /* padding-bottom: 10px; */
+}
+
+@media(max-width:668px) {
+
+    .contact
+    .country,
+    .city,
+    .state,
+    .zipcode,
+    .address {
+        width: 80%;
+    }
+}
+
+.contact span,
+.country span,
+.contact span,
+.city span,
+.state span,
+.zipcode span,
+.address span {
+    color: red;
+}
+
+.contact small,
+.country small,
+.contact small,
+.city small,
+.state small,
+.zipcode small,
+.address small {
+    line-height: 0.8 !important;
+    text-align: center;
+    color: red;
+    display: block;
+}
+
+.shipping-body-part .contact input,
+.shipping-body-part .country input,
+.shipping-body-part .city input,
+.shipping-body-part .state input,
+.shipping-body-part .zipcode input,
+.shipping-body-part .address input {
+    height: 34px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132);
+}
+
+.shipping-body-part .contact legend,
+.shipping-body-part .country legend,
+.shipping-body-part .city legend,
+.shipping-body-part .state legend,
+.shipping-body-part .zipcode legend,
+.shipping-body-part .address legend {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.shipping-body-part .contact input,
+.shipping-body-part .country input,
+.shipping-body-part .city input,
+.shipping-body-part .state input,
+.shipping-body-part .zipcode input,
+.shipping-body-part .address input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.shipping-footer-part {
+    width: 100%;
+    height: 10%;
+}
+
+@media(max-width:1300px) {
+    .shipping-footer-part {
+        height: auto;
+        padding-top: 30px;
+    }
+}
+
+.shipping-footer-part .previous,
+.shipping-footer-part .next {
+    background-color: #105082;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 0px 15px;
+}
+
+.shipping-footer-part {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-top: 20px; */
+}
+
+
+/* payement slides styles */
+.payement-slide {
+    width: 100%;
+    height: 100%;
+}
+
+.payement-main {
+    width: 100%;
+    height: 100%;
+}
+
+.payement-header-part {
+    width: 100%;
+    height: 10%;
+}
+
+@media(max-width:1300px) {
+    .payement-header-part {
+        height: auto;
+
+    }
+}
+
+.payement-header-part h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #000000;
+    opacity: 1;
+    padding-top: 7px;
+}
+
+.payement-body-part {
+    width: 100%;
+    height: 80%;
+    /* padding-top: 10px; */
+}
+
+@media(max-width:1300px) {
+    .payement-body-part {
+        height: auto;
+
+    }
+}
+
+.country,
+.city,
+.state,
+.zipcode,
+.address {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+    /* padding-bottom: 10px; */
+}
+
+@media(max-width:668px) {
+
+    .country,
+    .city,
+    .state,
+    .zipcode,
+    .address {
+        width: 80%;
+    }
+}
+
+.country span,
+.contact span,
+.city span,
+.state span,
+.zipcode span,
+.address span {
+    color: red;
+}
+
+.country small,
+.contact small,
+.city small,
+.state small,
+.zipcode small,
+.address small {
+    line-height: 0.8 !important;
+    text-align: center;
+    color: red;
+    display: block;
+}
+
+.payement-body-part .country select,
+.payement-body-part .country input,
+.payement-body-part .city input,
+.payement-body-part .state input,
+.payement-body-part .zipcode input,
+.payement-body-part .address input {
+    height: 34px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(34, 34, 34, 0.132);
+}
+
+.payement-body-part .country legend,
+.payement-body-part .city legend,
+.payement-body-part .state legend,
+.payement-body-part .zipcode legend,
+.payement-body-part .address legend {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.payement-body-part .country select,
+.payement-body-part .country input,
+.payement-body-part .city input,
+.payement-body-part .state input,
+.payement-body-part .zipcode input,
+.payement-body-part .address input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.payement-footer-part {
+    width: 100%;
+    height: 10%;
+}
+
+@media(max-width:1300px) {
+    .payement-footer-part {
+        height: auto;
+        padding-top: 30px;
+    }
+}
+
+.payement-footer-part .previous,
+.payement-footer-part .next {
+    background-color: #105082;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin: 0px 15px;
+}
+
+.payement-footer-part {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding-top: 20px; */
+}
