@@ -29,6 +29,11 @@
                         @php
                             $user = auth()->user();
                             $profile = $user->profile;
+                            $notifications = [];
+                            $notifications = \App\Models\Notification::orderBy('created_at', 'desc')
+                                ->where('user_id', auth()->user()->id)
+                                ->where('is_read', 0)
+                                ->get();
                         @endphp
                         {{-- general info here --}}
                         <div class="general p-0 m-0">
@@ -86,208 +91,13 @@
 
         <!-- HEADER -->
         <div class="row header">
-            <div class="col-md-4 all-flex-center">
-                <!--Store and no reserve -->
-                <div class="all-flex-center gap-5 d-none d-md-flex" style="width:fit-content;height:100%;">
-                    <!--for all stores start here -->
-                    <div>
-                        <div class="d-flex align-items-center gap-1" style="cursor: pointer" id="store-selector">
-                            <i class="bi bi-tag"></i>
-                            <h2 class="p-0 m-0 text-dark" style="font-size: 16px!important;font-weight:400!important">
-                                Stores
-                            </h2>
-                            <i class="bi bi-chevron-down mt-2"></i>
-                        </div>
-                        <ul class="position-absolute rounded-2 p-2"
-                            style="width: 100px;height:auto;background-color:#FFF;display:none;z-index:9"
-                            id="store-list">
-                            <li class="" style="font-size: 16px">
-                                <a href="{{ route('stores') }}" class="d-block w-100 text-dark"
-                                    style="color: black!important">All Stores</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- for all store ends here -->
-                    <!-- for reserve store starts here -->
-                    <div>
-                        <div class="d-flex align-items-center gap-1" style="cursor: pointer" id="no-reserve-selector">
-                            <i class="bi bi-currency-dollar"></i>
-                            <h2 class="p-0 m-0 text-dark" style="font-size: 16px;font-weight:400!important">No Reserve
-                            </h2>
-                            <i class="bi bi-chevron-down mt-2"></i>
-                        </div>
-                        <ul class="position-absolute rounded-2 p-2"
-                            style="width: 150px;height:auto;background-color:#FFF;display:none;z-index:9"
-                            id="no-reserve-list">
-                            <li class="" style="font-size: 16px">
-                                <a href="{{ route('auctions.no-reserve') }}" class="d-block w-100 text-dark">No Reserve
-                                    Gemstones</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- for reserve store ends here -->
-                </div>
-            </div>
-            <div class="col-md-4  logo all-flex-center">
+            <div class="col-md-4 logo ps-2">
                 <!-- logo is here -->
                 <a href="/">
-                    <img src="{{ asset('assets/buzzboostassets/logo-no-hd.png') }}" alt="logo image"
-                        style="filter: invert(1)">
+                    <img src="{{ asset('assets/buzzboostassets/logo-no-hd.png') }}" alt="logo image">
                 </a>
             </div>
-            <div class="col-md-4  login-register all-flex-center  position-relative ">
-                <ul class="m-auto ms-md-auto ">
-                    @guest
-                        @if (Route::has('register'))
-                            <!-- Register link -->
-                            <li>
-                                <a href="{{ route('register') }}" class="register">Register</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('login'))
-                            <!-- login link -->
-                            <li>
-                                <a href="{{ route('login') }}" class="login">Login</a>
-                            </li>
-                        @endif
-                    @endguest
-                    <!-- menu icon -->
-                    <li>
-                        <div class="collapsedNavbar">
-                            <i class="bi bi-list" style="font-size: 20px"></i>
-                        </div>
-                    </li>
-                </ul>
-                <div class="navbarList position-absolute bg-white rounded-3 p-3">
-                    <ul class="m-0 d-flex align-items-center justify-content-start">
-                        <li>
-                            <div class="search-icon">
-                                <i class="bi bi-search special-icon"></i>
-                            </div>
-                        </li>
-                        @auth
-                            @if (auth()->user()->hasRole('buyer'))
-                                <!-- Cart Icon with Count -->
-                                <li style="position:relative">
-                                    <a href="{{ route('buyer.cart') }}">
-                                        <i class="bi bi-cart4 special-icon"></i>
-                                        <span class="circular-number"
-                                            id="cart-count">{{ auth()->user()?->cart?->total_items ?? 0 }}
-                                        </span>
-                                    </a>
-                                </li>
-                                <!-- Heart Icon with Count -->
-                                <li style="position: relative">
-                                    <a href="{{ route('buyer.wishlist.index') }}">
-                                        <i class="bi bi-suit-heart special-icon"></i>
-                                        <span class="circular-number">{{ auth()->user()->wishlist->count() }}
-                                        </span>
-                                    </a>
-                                </li>
-                            @endif
-                            @php
-                                $notifications = [];
-                                $notifications = \App\Models\Notification::orderBy('created_at', 'desc')
-                                    ->where('user_id', auth()->user()->id)
-                                    ->where('is_read', 0)
-                                    ->get();
-                            @endphp
-                            <li style="position: relative">
-                                <button id="notificationIcon" type="button" class="bg-transparent border-0 text-white">
-                                    <i class="bi bi-bell special-icon"></i>
-                                    <span id="notificationCount"
-                                        class="circular-number">{{ $notifications->count() }}</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button class="border-0 bg-transparent">
-                                    <i class="bi bi-person-circle special-icon" data-bs-toggle="modal"
-                                        data-bs-target="#forUserDetails"></i>
-                                </button>
-                            </li>
-                            <li>
-                                <div class="">
-                                    <span class="icon-link user-options-selector"
-                                        style="cursor: pointer">{{ auth()->user()->name }} <i class="bi bi-chevron-down"
-                                            style="font-size: 12px"></i>
-                                    </span>
-                                </div>
-                            </li>
-                        @endauth
-                    </ul>
-                    <!-- search wrapper starts here -->
-                    <div class="search-wrapper mt-3" style="display:none;">
-                        <input id="search" type="search" placeholder="Search products" class="search">
-                    </div>
-                    <!-- search wrapper ends here -->
-                    <!-- user options list starts here -->
-                    <div class="user-options-list  all-flex-center" style="display:none;width:100%">
-                        <ul class="bg-white all-flex-center flex-column py-4 m-0" style="width:100%;height:auto;">
-                            <li>
-                                <a class="user-option-item" href="{{ route('dashboard') }}">Dashboard
-                                </a>
-                            </li>
-                            <!-- Switch Role based on User -->
-                            @auth
-                                @if (auth()->user()->hasRole('seller'))
-                                    <li>
-                                        <a class="user-option-item" href="{{ route('switch.role') }}">Switch to Buyer</a>
-                                    </li>
-                                @elseif (auth()->user()->hasRole('buyer'))
-                                    @if (auth()->user()->store == null)
-                                        <li>
-                                            <a class="user-option-item" href="{{ route('switch.role') }}">Become a
-                                                Seller</a>
-                                        </li>
-                                    @else
-                                        <li>
-                                            <a class="user-option-item" href="{{ route('switch.role') }}">Switch to
-                                                Seller</a>
-                                        </li>
-                                    @endif
-                                @endif
-                            @endauth
-                            <li>
-                                <a class="user-option-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                            </li>
-                            <!-- Logout Form -->
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </ul>
-                    </div>
-                    <!-- user options list ends here -->
-                    <!-- notification starts  here -->
-                    @auth
-                        {{--  @include('layouts.includes.notification') --}}
-                        <div id="notificationBody" class="rounded-2 py-3" style="display:none;width:100%;">
-                            <div class="px-2">
-                                <h4 style="font-size: 21px">Notifications</h4>
-                                @forelse ($notifications as $notification)
-                                    <div class="notification-item my-2">
-                                        <h4 class="notification-text d-flex align-items-center m-0">
-                                            {{ $notification->title ?? 'N/A' }}
-                                        </h4>
-                                        {{-- <p class="notification-time m-0">july 23,2023 at 9:15 PM</p> --}}
-                                        <p class="notification-time m-0">
-                                            {{ $notification->created_at->format('F j, Y, g:i a') }}</p>
-                                    </div>
-                                @empty
-                                    <div class="notification-item my-2">
-                                        <p class="notification-time m-0">No new notifications.</p>
-                                    </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    @endauth
-                    <!-- notification ends  here -->
-                </div>
-            </div>
+            @include('layouts.includes.guest-buyer-header-options')
         </div>
 
         {{-- Hero Div Section --}}
@@ -425,57 +235,9 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $(function() {
-            // Reusable function to handle toggle behavior
-            function toggleElement(selector, list) {
-                const elementSelector = $(selector);
-                const elementList = $(list);
 
-                let isInside = false;
-
-                elementSelector.on("mouseenter", function() {
-                    isInside = true;
-                    elementList.show("fade", {
-                        direction: "vertical"
-                    }, 100);
-                });
-
-                elementSelector.on("mouseleave", function() {
-                    isInside = false;
-                    setTimeout(function() {
-                        if (!isInside) {
-                            elementList.hide("fade", {
-                                direction: "vertical"
-                            }, 100);
-                        }
-                    }, 200);
-                });
-
-                elementList.on("mouseenter", function() {
-                    isInside = true;
-                });
-
-                elementList.on("mouseleave", function() {
-                    isInside = false;
-                    elementList.hide("fade", {
-                        direction: "vertical"
-                    }, 100);
-                });
-
-                // Close the element when clicking outside
-                $(document).on("click", function() {
-                    if (!isInside) {
-                        elementList.hide("fade", {
-                            direction: "vertical"
-                        }, 100);
-                    }
-                });
-            }
-            // Call the function for each element
-            toggleElement("#store-selector", "#store-list");
-            toggleElement("#small-store-selector", "#small-store-list");
-            toggleElement("#no-reserve-selector", "#no-reserve-list");
-            toggleElement("#small-no-reserve-selector", "#small-no-reserve-list");
-
+            // menu controls here
+            
             function toggleElementClick(seSelector, seList) {
                 const searchSelector = $(seSelector);
                 const searchList = $(seList);
@@ -526,7 +288,11 @@
             toggleElementClick(".search-icon", ".search-wrapper");
             toggleElementClick(".collapsedNavbar", ".navbarList");
             toggleElementClick(".user-options-selector", ".user-options-list");
+            toggleElementClick(".stores-selector", ".stores-list");
+            toggleElementClick(".no-reserve-selector", ".no-reserve-list");
             toggleElementClick("#notificationIcon", "#notificationBody");
+
+            // notifications controls
 
             $("#notificationBody").mouseenter(function() {
                     @auth

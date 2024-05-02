@@ -5,9 +5,6 @@
 @endsection
 @section('content')
     <div class="m-auto" style="max-width: 1200px">
-        <div class="row hero p-5">
-         
-        </div>
         <div class="row main-home-row">
             <div class="col-lg-5 p-2 px-1">
                 <div class="carousel slide carousel-dark" id="carouselExampleDark" data-bs-ride="carousel">

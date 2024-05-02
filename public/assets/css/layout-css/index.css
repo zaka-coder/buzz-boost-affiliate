@@ -3,6 +3,7 @@
     font-family: lato;
     src: url('../../fonts/lato/Lato-Regular.ttf');
 }
+
 @font-face {
     font-family: gt-esti;
     src: url('../../fonts/gt-easti.ttf');
@@ -42,13 +43,42 @@ body {
     background-color: #F8F7FA;
 }
 
+/* SOLID MAIN COLOR CODE : #E3CD81FF */
+/* SECONDARY COLOR CODE : #B1B3B3FF */
+
 :root {
+
     --button-border-radius: 4px;
     --button-padding: 8px 28px;
     --button-color: #105082;
-    --scheme-color: #00AE45;
+    --scheme-color: #E3CD81FF;
+    --scheme-color-active: rgba(227, 206, 129, 0.26);
     --font-family: 'lato', sans-serif;
     --btn-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.scheme-text-color {
+    color: var(--scheme-color);
+}
+
+.scheme-active {
+    padding: 5px 8px;
+}
+
+.scheme-active:hover {
+    background-color: var(--scheme-color-active);
+    border-radius: 5px;
+
+}
+
+.menu-control {
+    display: none;
+    width: 250px;
+    top: 100%;
+    z-index: 10;
+    right: 16%;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .row {
@@ -150,6 +180,7 @@ input[type="search"] {
 .header {
     height: 10vh;
     border-bottom: 1px solid rgb(208, 207, 207);
+    background-color: #000000c4;
 }
 
 /* Responsive Header Styling for Medium Screens */
@@ -181,7 +212,7 @@ input[type="search"] {
 /* Login-Register Styles */
 .login-register ul {
     height: 100%;
-    gap: 15px;
+    gap: 7px;
     padding: 0;
     display: flex;
     align-items: center;
@@ -328,6 +359,9 @@ input[type="search"] {
     color: black;
     font-size: 14px;
     font-family: nunito;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 
 /* Dropdown Item Hover Styles */
@@ -349,20 +383,20 @@ input[type="search"] {
 }
 
 .navbarList {
-    top: 100%;
+    top: 0%;
     right: 25px !important;
     box-shadow: 2px 5px 15px rgb(208, 207, 207) !important;
     display: none;
     width: 250px;
-    z-index: 9
+    z-index: 11
 }
 
 /* icons styles */
 .circular-number {
     position: absolute;
-    top: -2px;
-    right: -9px;
-    background-color: #105082;
+    top: -4px;
+    right: -3px;
+    background-color: var(--scheme-color);
     color: white;
     border-radius: 100%;
     width: 15px;
@@ -371,12 +405,10 @@ input[type="search"] {
     align-items: center;
     justify-content: center;
     font-size: 10px;
-    padding-top: 1px
 }
 
 .special-icon {
     font-size: 20px;
-    color: black;
 }
 
 /* Search Input Styles */
@@ -391,6 +423,7 @@ input[type="search"] {
     color: black;
     border-radius: 7px;
     border: 1px solid gray;
+    width: 100%;
 }
 
 /* Search Input Placeholder Styles */
@@ -459,7 +492,7 @@ input[type="search"] {
     width: 100vw;
     height: calc(100vh - 10vh);
     margin: auto;
-    background: #F8F7FA 0% 0% no-repeat padding-box;
+    background-color: #000000c4;
     opacity: 1;
 }
 
@@ -529,7 +562,7 @@ input[type="search"] {
     font-weight: bold;
     font-family: nunito;
     letter-spacing: 0px;
-    color: var(--button-color);
+    /* color: var(--button-color); */
     opacity: 1;
     text-transform: uppercase;
 }
@@ -540,7 +573,7 @@ input[type="search"] {
     font-family: nunito;
     font-weight: normal;
     letter-spacing: 0px;
-    color: black;
+    color: var(--scheme-color);
     opacity: 1;
     background: transparent;
     opacity: 1;
@@ -548,10 +581,13 @@ input[type="search"] {
     width: 100%;
     padding: 8px;
     border-radius: 6px;
+    transition: all 0.3s ease-in-out;
 }
 
+
 .hero-div .main-item:hover {
-    background-color: #F2F2F2;
+    background-color: var(--scheme-color-active);
+    padding-left: 15px;
 }
 
 /* Styles for Active Main Items in Hero Div */
