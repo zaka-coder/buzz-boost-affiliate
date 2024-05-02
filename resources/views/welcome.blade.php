@@ -5,6 +5,9 @@
 @endsection
 @section('content')
     <div class="m-auto" style="max-width: 1200px">
+        <div class="row hero p-5">
+         
+        </div>
         <div class="row main-home-row">
             <div class="col-lg-5 p-2 px-1">
                 <div class="carousel slide carousel-dark" id="carouselExampleDark" data-bs-ride="carousel">
@@ -18,7 +21,7 @@
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                                 {{-- <div class="carousel-first-part bg-warning"></div> --}}
                                 <div class="carousel-second-part">
-                                    <div class="carousel-second-part-top bg-dasnger">
+                                    <div class="carousel-second-part-top">
                                         <a href="{{ route('products.show', $product->id) }}" class="p-0">
                                             <h1 class="skeleton">{{ $product->weight }} ct {{ $product->name }}</h1>
                                         </a>
@@ -90,7 +93,8 @@
                                 @endif
                             </div>
                             <div class="card-footer ">
-                                <div class="footer-icons-part d-flex align-items-center  justify-content-start ps-3  gap-1">
+                                <div
+                                    class="footer-icons-part d-flex align-items-center  justify-content-start ps-3  gap-1">
                                     @if ($product->productListing->item_type == 'auction')
                                         <button class="m-0 p-0 border-0 bg-transparent skeleton-icon" type="button"
                                             data-bs-toggle="modal" data-bs-target="#bid-popup{{ $product->id }}"

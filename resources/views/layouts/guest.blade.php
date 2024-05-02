@@ -319,7 +319,7 @@
                 </div>
             </div>
             <!-- Right Content Area -->
-            <div class="col-12 col-md-10 p-2 hero-div-partition">
+            <div class="col-12 col-md-10 hero-div-partition">
                 <!-- Dynamic Content Area -->
                 <div class="dynamic-part">
                     @yield('content')

@@ -1,4 +1,33 @@
+/* Hero Section styles */
+.hero {
+    height: calc(100vh - 62px);
+    width: calc(100vw - 245px);
+    background-image: url('../../../assets/home/hero.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    position: relative
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.special-font {
+    font-family: gt-esti!important;
+    letter-spacing: 1px!important;
+}
+
 /* mian home row styles */
+
 .dynamic-part {
     background-color: transparent !important;
 }
@@ -13,19 +42,20 @@
 .carousel {
     width: 100%;
     height: 100%;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: -1px 0px 9px #00000029;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
-    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .featured {
     height: 10%;
     font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 0px;
-    color: #105082;
+    font-size: 25px;
+    /* font-weight: bold; */
+    letter-spacing: 5px;
     opacity: 1;
 }
 
@@ -63,7 +93,7 @@
     font-size: 18px;
     font-weight: medium;
     letter-spacing: 0px;
-    color: #EA008B;
+    color: white;
     opacity: 1;
     width: fit-content;
 }
@@ -71,30 +101,27 @@
 .carousel-second-part-top p {
     font: normal normal normal 11px/15px Segoe UI;
     letter-spacing: 0px;
-    color: #000000;
+    color: white;
     opacity: 1;
 }
 
 .carousel-second-part-top img {
-    width: 100%;
+    width: 200px;
     height: 150px;
     display: block;
     margin: auto;
     border-radius: 6px;
-    max-width: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.carousel-second-part h2 {
+.carousel-second-part-bottom h2 {
     font-size: 20px;
     font-weight: bold;
     font-family: 'Nunito', sans-serif;
     letter-spacing: 0px;
-    color: #105082;
+    color: black;
     opacity: 1;
-    margin-bottom: 25px;
-    width: fit-content;
 }
 
 .carousel-second-part-bottom {
@@ -102,16 +129,15 @@
     height: 20%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 .carousel-second-part-bottom a {
     padding: 10px 15px;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 120px;
     text-align: center;
-    background: #EA008B 0% 0% no-repeat padding-box;
-    box-shadow: 0px 0px 3px #00000029;
+    background: #105082 0% 0% no-repeat padding-box;
     opacity: 1;
     border: none;
     color: white;
@@ -119,12 +145,16 @@
     font-size: 15px;
     text-decoration: none;
     border-radius: 6px;
-    transition: all 0.3s ease-in-out;
+    box-shadow: var(--btn-box-shadow);
+    -webkit-box-shadow: var(--btn-box-shadow);
+    -moz-box-shadow: var(--btn-box-shadow);
+    transition: all 0.5s ease-in-out;
 }
 
-.carousel-second-part-bottom a:active {
-    transform: scale(0.9);
+.carousel-second-part-bottom a:hover {
+    background: #004070;
 }
+
 
 
 .carousel-control-next,
@@ -177,14 +207,15 @@
 .products-cards .card {
     width: 200px;
     height: 230px !important;
-    margin: auto;
-    margin: 5px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 2px 5px 15px rgb(208, 207, 207);
-    border-radius: 9px;
+    margin: 0 5px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
     overflow: hidden;
     opacity: 1;
-    border: none;
 }
 
 @media(max-width:668px) {
