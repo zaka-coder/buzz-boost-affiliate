@@ -5,11 +5,20 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background-color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             padding: 30px;
-            width: 450px;
-            border-radius: 20px;
+            width: 90%;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .register-form {
+            position: absolute;
+            top: 110%;
         }
 
         @media(max-width:998px) {
@@ -27,7 +36,7 @@
         }
 
         .flex-column>label {
-            color: #151717;
+            color: white;
             font-weight: 600;
         }
 
@@ -83,16 +92,23 @@
         }
 
         .button-submit {
-            margin: 20px 0 10px 0;
-            background-color: #105082;
-            border: none;
-            color: white;
-            font-size: 15px;
-            font-weight: 500;
-            border-radius: 10px;
-            height: 50px;
+            padding: 10px 15px;
+            display: inline-block;
             width: 100%;
-            cursor: pointer;
+            text-align: center;
+            background: #E3CD81FF 0% 0% no-repeat padding-box;
+            opacity: 1;
+            border: none;
+            color: black;
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: var(--btn-box-shadow);
+            -webkit-box-shadow: var(--btn-box-shadow);
+            -moz-box-shadow: var(--btn-box-shadow);
+            transition: all 0.5s ease-in-out;
+            margin-top: 20px;
         }
 
         .p {
@@ -102,88 +118,180 @@
             margin: 5px 0;
         }
 
-        /*
-                    .btn {
-                        margin-top: 10px;
-                        width: 100%;
-                        height: 50px;
-                        border-radius: 10px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        font-weight: 500;
-                        gap: 10px;
-                        border: 1px solid #ededef;
-                        background-color: white;
-                        cursor: pointer;
-                        transition: 0.2s ease-in-out;
-                    }
-
-                    .btn:hover {
-                        border: 1px solid #2d79f3;
-                        ;
-                    } */
-
         .dynamic-part {
             background-color: transparent !important;
+        }
+
+        .menu-control {
+            display: none;
+        }
+
+        i {
+            color: white
+        }
+
+        .entry-btn {
+            padding: 10px 15px;
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            background: #E3CD81FF 0% 0% no-repeat padding-box;
+            opacity: 1;
+            border: none;
+            color: black;
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: var(--btn-box-shadow);
+            -webkit-box-shadow: var(--btn-box-shadow);
+            -moz-box-shadow: var(--btn-box-shadow);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .hidden {
+            display: none
         }
     </style>
 @endsection
 @section('content')
-    <form class="form m-auto shadow-lg my-3" method="POST" action="{{ route('register') }}">
-        <h1 class="display-6 fs-3 fw-bold text-center m-2">Register</h1>
-        @csrf
-        <div class="flex-column">
-            <label>Name</label>
+    <div class="row mt-3">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <button class="entry-btn" id="register-btn">Register <i class="bi bi-arrow-down text-black"></i></button>
         </div>
-        <div class="inputForm">
-            <i class="bi bi-person"></i>
-            <input placeholder="Enter your Name" class="input" type="text" name="name" value="{{ old('name') }}">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <button class="entry-btn" id="login-btn">Login</button>
         </div>
-        @error('name')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-        <div class="flex-column">
-            <label>Email</label>
-        </div>
-        <div class="inputForm">
-            <span>@</span>
-            <input placeholder="Enter your Email" class="input" type="email" name="email" value="{{ old('email') }}">
-        </div>
-        @error('email')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-        {{-- <div class="flex-column">
-                        <label>Username</label>
+    </div>
+    <div class="row">
+        <div class="col-md-6 d-flex align-items-center justify-content-center position-relative  pt-3">
+            <form class="form m-2 shadow-lg my-3 hidden " method="POST" action="{{ route('register') }}"
+                id="register-form">
+                <div class="w-100 m-auto">
+                    <h1 class="display-6 fs-3 fw-bold text-center text-white">Register</h1>
+                    @csrf
+                    <div class="flex-column">
+                        <label>Name</label>
+                    </div>
+                    <div class="inputForm mb-3">
+                        <i class="bi bi-person"></i>
+                        <input placeholder="Enter your Name" class="input" type="text" name="name"
+                            value="{{ old('name') }}">
+                    </div>
+                    @error('name')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                    <div class="flex-column">
+                        <label>Email</label>
+                    </div>
+                    <div class="inputForm mb-3">
+                        <span class="text-white">@</span>
+                        <input placeholder="Enter your Email" class="input" type="email" name="email"
+                            value="{{ old('email') }}">
+                    </div>
+                    @error('email')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                    <div class="flex-column">
+                        <label>Password </label>
+                    </div>
+                    <div class="inputForm mb-3">
+                        <i class="bi bi-lock"></i>
+                        <input placeholder="Enter your Password" class="input" type="password" name="password">
+                    </div>
+                    @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                    <div class="flex-column">
+                        <label>Confirm Password</label>
                     </div>
                     <div class="inputForm">
-                        <i class="bi bi-person"></i>
-                        <input placeholder="Enter your Username" class="input" type="text" name="username"
-                            value="{{ old('username') }}">
+                        <i class="bi bi-lock"></i>
+                        <input placeholder="Enter your Confirm Password" class="input" type="password"
+                            name="password_confirmation">
                     </div>
-                    @error('username')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror --}}
-        <div class="flex-column">
-            <label>Password </label>
+                    <button class="button-submit" type="submit">Register</button>
+                    <p class="p">have an account? <a href="{{ route('login') }}" class="span text-decoration-none">Log
+                            in</a>
+                    </p>
+                </div>
+            </form>
         </div>
-        <div class="inputForm">
-            <i class="bi bi-lock"></i>
-            <input placeholder="Enter your Password" class="input" type="password" name="password">
+        <div class="col-md-6 d-flex align-items-start justify-content-center position-relative  pt-3">
+            <form class="form m-2 shadow-lg my-3 hidden" method="POST" action="{{ route('login') }}" id="login-form">
+                <h1 class="display-6 fs-3 fw-bold text-center text-white">Log In</h1>
+                @csrf
+                <div class="flex-column">
+                    <label>Email </label>
+                </div>
+                <div class="inputForm mb-3">
+                    <span class="text-white">@</span>
+                    <input placeholder="Enter your Email" class="input" type="text" name="email">
+                </div>
+                @error('email')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+                <div class="flex-column">
+                    <label>Password </label>
+                </div>
+                <div class="inputForm mb-3">
+                    <i class="bi bi-lock"></i>
+                    <input placeholder="Enter your Password" class="input" type="password" name="password">
+                </div>
+                @error('password')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+                <div class="flex-row">
+                    <div>
+                        <input type="radio">
+                        <label>Remember me </label>
+                    </div>
+                    <a href="/forget-password" class="span">Forgot password?</a>
+                </div>
+                <button class="button-submit" type="submit">Log In</button>
+                <p class="p">Don't have an account? <a href="{{ route('register') }}"
+                        class="span text-decoration-none">Sign
+                        up</a>
+                </p>
+            </form>
         </div>
-        @error('password')
-            <small class="text-danger">{{ $message }}</small>
-        @enderror
-        <div class="flex-column">
-            <label>Confirm Password</label>
-        </div>
-        <div class="inputForm">
-            <i class="bi bi-lock"></i>
-            <input placeholder="Enter your Confirm Password" class="input" type="password" name="password_confirmation">
-        </div>
-        <button class="button-submit" type="submit">Register</button>
-        <p class="p">have an account? <a href="{{ route('login') }}" class="span text-decoration-none">Sign
-                in</a>
-        </p>
-    </form>
+    </div>
+@endsection
+@section('js')
+    <script>
+        $(document).ready(function() {
+            // for register Controls
+            $('#register-btn').click(function() {
+                $('#register-form').toggle('slide', {
+                    direction: 'up'
+                }, 'slow').toggleClass('hidden');
+            });
+            $(document).click(function(e) {
+                var registerForm = $('#register-form');
+                // Check if the form is visible and the click event is outside the button or the form
+                if (registerForm.is(':visible') && !$(e.target).closest('#register-btn, #register-form')
+                    .length) {
+                    registerForm.toggle('slide', {
+                        direction: 'up'
+                    }, 'slow').toggleClass('hidden');
+                }
+            });
+            // for register Controls
+            $('#login-btn').click(function() {
+                $('#login-form').toggle('slide', {
+                    direction: 'up'
+                }, 'slow').toggleClass('hidden');
+            });
+            $(document).click(function(e) {
+                var loginForm = $('#login-form');
+                // Check if the form is visible and the click event is outside the button or the form
+                if (loginForm.is(':visible') && !$(e.target).closest('#login-btn, #login-form')
+                    .length) {
+                    loginForm.toggle('slide', {
+                        direction: 'up'
+                    }, 'slow').toggleClass('hidden');
+                }
+            });
+        });
+    </script>
 @endsection

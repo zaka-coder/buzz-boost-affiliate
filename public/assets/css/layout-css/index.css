@@ -252,27 +252,49 @@ input[type="search"] {
 
 /* Register Button Styles */
 .header ul li .register {
-    padding: var(--button-padding);
-    background-color: var(--button-color);
-    border-radius: var(--button-border-radius);
-    color: white;
-    font-family: var(--font-family);
+    padding: 10px 15px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    background: #E3CD81FF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: none;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: var(--btn-box-shadow);
+    -webkit-box-shadow: var(--btn-box-shadow);
+    -moz-box-shadow: var(--btn-box-shadow);
+    transition: all 0.5s ease-in-out;
 }
 
 /* Login Button Styles */
 .header ul li .login {
-    padding: var(--button-padding);
-    border-radius: var(--button-border-radius);
-    border: 1px solid var(--button-color);
-    color: #105082;
-    font-family: var(--font-family);
-    transition: all ease 0.5s;
+    padding: 10px 15px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+    opacity: 1;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: var(--btn-box-shadow);
+    -webkit-box-shadow: var(--btn-box-shadow);
+    -moz-box-shadow: var(--btn-box-shadow);
+    transition: all 0.5s ease-in-out;
 }
 
 /* Login Button Hover Styles */
 .header ul li .login:hover {
-    background-color: var(--button-color);
-    color: white;
+    background: #E3CD81FF 0% 0% no-repeat padding-box;
+    border: 1px solid #E3CD81FF;
+    color: black;
 }
 
 /* Navigation Styles */
@@ -397,7 +419,7 @@ input[type="search"] {
     top: -4px;
     right: -3px;
     background-color: var(--scheme-color);
-    color: white;
+    color: black;
     border-radius: 100%;
     width: 15px;
     height: 15px;
@@ -604,10 +626,8 @@ input[type="search"] {
 
 /* Dynamic Part Styles */
 .dynamic-part {
-    width: calc(100% - 60px);
+    width: 100%;
     height: 100%;
-    /* margin: 0px 30px; */
-    /* overflow: auto; */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 4px;
     opacity: 1;

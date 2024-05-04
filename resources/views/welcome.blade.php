@@ -2,130 +2,59 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/home/home.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/layout-css/slider.css') }}">
 @endsection
 @section('content')
-    <div class="m-auto" style="max-width: 1200px">
+    <div class="m-auto p-2">
         <div class="row main-home-row">
-            <div class="col-lg-5 p-2 px-1">
-                <div class="carousel slide carousel-dark" id="carouselExampleDark" data-bs-ride="carousel">
-                    <div class="featured p-2 ps-3">
-                        <div class="skeleton" style="width: fit-content;text-transform:uppercase">
-                            Featured Items
-                        </div>
-                    </div>
-                    <div class="carousel-inner p-2 ps-3">
+            <div class="col-lg-12 p-2 px-1">
+                <div class="carousel slide carousel-dark d-flex" id="carouselExampleDark" data-bs-ride="carousel">
+                    <div class="carousel-inner p-2 ps-3 w-50">
                         @foreach ($showcaseProducts as $key => $product)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                {{-- <div class="carousel-first-part bg-warning"></div> --}}
-                                <div class="carousel-second-part">
-                                    <div class="carousel-second-part-top">
-                                        <a href="{{ route('products.show', $product->id) }}" class="p-0">
-                                            <h1 class="skeleton">{{ $product->weight }} ct {{ $product->name }}</h1>
+                                <div class="carousel-content">
+                                    <div class="carousel-content-main">
+                                        <a href="{{ route('products.show', $product->id) }}" class="p-0 d-block">
+                                            <h1 class="product-name">{{ $product->weight }} ct {{ $product->name }}</h1>
                                         </a>
-                                        <p class="w-90 skeleton" style="text-align: justify">{!! \Illuminate\Support\Str::limit(strip_tags($product->description), 130, '...') !!}</p>
-                                        <h2 class="skeleton">${{ $product->productPricing->buy_it_now_price }}</h2>
-                                        <div class="skeleton">
-                                            {{-- <img src="{{ asset($product->image) }}" alt="item"> --}}
-                                            <img src="{{ asset('assets/home/purple-item.png') }}" alt="item">
-                                        </div>
-                                    </div>
-                                    <div class="carousel-second-part-bottom">
+                                        <p class="w-90 product-description" style="text-align: justify">
+                                            {!! \Illuminate\Support\Str::limit(strip_tags($product->description), 130, '...') !!}</p>
+                                        <h2 class="product-price">${{ $product->productPricing->buy_it_now_price }}</h2>
                                         <a href="javascript:void(0)" onclick="addToCart({{ $product->id }})"
-                                            class="skeleton">Buy Now</a>
+                                            class="buy-now-btn">Buy Now</a>
+                                    </div>
+                                    <div class="d-none">
+                                        <!-- dynamic image -->
+                                        {{-- <img src="{{ asset($product->image) }}" alt="item"> --}}
+
+                                        <!-- Static Image -->
+                                        <img src="{{ asset('assets/home/purple-item.png') }}" alt="item">
                                     </div>
                                 </div>
-                                {{-- <div class="carousel-third-part">
-                                </div> --}}
                             </div>
                         @endforeach
                     </div>
-                </div>
-            </div>
-            {{-- featured cards html --}}
-            <div class="col-lg-7 p-1">
-                <div class="products-cards grid_system_square">
-                    @foreach ($premiumProducts as $product)
-                        <div class="card">
-                            <div class="card-head p-2">
-                                <section id="splide-{{ $product->id }}" class="splide w-100 h-100 " aria-label="">
-                                    <div class="splide__track w-100 h-100">
-                                        <ul class="splide__list w-100 h-100">
-                                            <li class="splide__slide w-100 h-100 position-relative skeleton">
-                                                <img src="{{ asset($product->image ?? 'assets/buyer-assets/coming-soon.avif') }}"
-                                                    alt=""
-                                                    style="width:100%;height:100%;max-width:100%;object-fit:cover"
-                                                    class="rounded-3">
-                                                <span class="featured-tag">Premium</span>
-                                            </li>
-                                            @foreach ($product->gallery as $gallery)
-                                                <li class="splide__slide w-100 h-100 position-relative">
-                                                    <img src="{{ asset($gallery->image ?? 'assets/buyer-assets/coming-soon.avif') }}"
-                                                        alt=""
-                                                        style="width:100%;height:100%;max-width:100%;object-fit:cover"
-                                                        class="rounded-3">
-                                                    <span class="featured-tag">Premium</span>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </section>
-                            </div>
-                            <a href="{{ route('products.show', $product->id) }}" class="products-card-link">
-                                <div class="card-body">
-                                    <div class="card-body-first">
-                                        <h5 class="m-0 p-2 text-center text-truncate text-capitalize skeleton-text">
-                                            {{ $product->weight }} ct
-                                            {{ $product->name }} </h5>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="time-part pt-1">
-                                @if ($product->productListing->item_type == 'auction')
-                                    @php
-                                        $countdownTime = $product->countdown_time;
-                                    @endphp
-                                    <p class="p-0 m-0 text-center skeleton-text" id="footerTime{{ $product->id }}">
-                                        {{ $countdownTime['days'] . 'd ' . $countdownTime['hours'] . 'h ' . $countdownTime['minutes'] . 'm ' ?? 'N/A' }}
-                                    </p>
-                                @endif
-                            </div>
-                            <div class="card-footer ">
-                                <div
-                                    class="footer-icons-part d-flex align-items-center  justify-content-start ps-3  gap-1">
-                                    @if ($product->productListing->item_type == 'auction')
-                                        <button class="m-0 p-0 border-0 bg-transparent skeleton-icon" type="button"
-                                            data-bs-toggle="modal" data-bs-target="#bid-popup{{ $product->id }}"
-                                            title="Bid Now">
-                                            <i class="bi bi-hammer"></i>
-                                        </button>
-                                    @else
-                                        {{-- <i class="bi bi-bag-check"></i> --}}
-                                        <button class="m-0 p-0 border-0 bg-transparent skeleton-icon" type="button"
-                                            title="Add to cart" onclick="addToCart({{ $product->id }})">
-                                            <i id="add-to-cart-icon-{{ $product->id }}" class="bi bi-bag"></i>
-                                        </button>
-                                        <button class="m-0 p-0 border-0 bg-transparent skeleton-icon" type="button"
-                                            data-bs-toggle="modal" data-bs-target="#make-offer-popup{{ $product->id }}"
-                                            title="Make an offer">
-                                            <i class="bi bi-arrow-left-right"></i>
-                                        </button>
-                                    @endif
-                                    <button class="m-0 p-0 rounded-4 border-0 bg-transparent skeleton-icon"
-                                        title="Certified">
-                                        <i class="bi bi-shield-check" title="Certified"></i>
-                                    </button>
-                                    {{-- <i class="bi bi-shield-x"></i> --}}
-                                </div>
-                                <div class="footer-price-time-part d-flex align-items-center justify-content-center">
-                                    <div class="footer-price-part">
-                                        <p class="skeleton-text">
-                                            ${{ $product->productListing->item_type == 'auction' ? $product->productPricing->starting_price : $product->productPricing->buy_it_now_price }}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+                    <div class="w-50 d-flex align-items-center justify-content-center">
+                        <section id="slider" >
+                            <input type="radio" name="slider" id="s1" checked>
+                            <input type="radio" name="slider" id="s2">
+                            <input type="radio" name="slider" id="s3">
+                            <input type="radio" name="slider" id="s4">
+                            <input type="radio" name="slider" id="s5">
+
+                            <label for="s1" id="slide1"><img
+                                    src="https://t4.ftcdn.net/jpg/07/55/86/23/360_F_755862321_yp2yMhHC9R0eOclfITgiLbebEMpPe9eZ.webp"
+                                    alt=""></label>
+                            <label for="s2" id="slide2"><img
+                                    src="https://t4.ftcdn.net/jpg/06/53/24/41/240_F_653244104_d3oaSJBvHOqbsqYTWiZtYRLCxtHYwYz9.jpg" alt=""></label>
+                            <label for="s3" id="slide3"><img src="https://t4.ftcdn.net/jpg/07/24/71/97/240_F_724719744_1rcKAJTSF34CkX7atHhEoW87NusMuo45.jpg"
+                                    alt=""></label>
+                            <label for="s4" id="slide4"><img src="https://t4.ftcdn.net/jpg/06/01/56/25/240_F_601562544_0F8TC2ZqlEhgT4rqKbyRPt0Fl3ZMA08r.jpg"
+                                    alt=""></label>
+                            <label for="s5" id="slide5"><img
+                                    src="https://t4.ftcdn.net/jpg/07/05/16/17/240_F_705161764_cM4AtMMXyaQg1d267UJzMKCRiDmz8Ziq.jpg" alt=""></label>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>

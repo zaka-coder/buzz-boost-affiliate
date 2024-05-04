@@ -10,12 +10,12 @@
                 </li>
             @endif
 
-            @if (Route::has('login'))
+            {{-- @if (Route::has('login'))
                 <!-- login link / Login Button -->
                 <li>
                     <a href="{{ route('login') }}" class="login">Login</a>
                 </li>
-            @endif
+            @endif --}}
         @endguest
         <li>
             <div class="search-icon">
